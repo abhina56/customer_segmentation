@@ -1,0 +1,1178 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+    
+    :root {
+      --primary: #1f2e88;
+      --secondary: #2f66d4;
+      --hover: #a2d9f5;
+      --black: #333;
+      --white: #fff;
+      --light-color: #666;
+      --light-bg: #eee;
+      --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+      --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+    
+    * {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      transition: 0.2s linear;
+    }
+    
+    html {
+      font-size: 62.5%;
+      overflow-x: hidden;
+      scroll-padding-top: 9rem;
+      scroll-behavior: smooth;
+    }
+    
+    
+    html::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+    
+    html::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    html::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 5rem;
+    }
+    
+    .body.header {
+      background-color: black;
+    }
+    
+    nav img {
+      height: 50px;
+      width: 50px;
+    }
+    
+    section {
+      padding: 4.5rem 7%;
+    }
+    
+    .heading {
+      font-size: 4rem;
+      color: var(--black);
+      text-align: center;
+      text-transform: capitalize;
+      font-weight: bolder;
+      margin-bottom: 3rem;
+      background: linear-gradient(#5ecafc, #ffffff) ;
+    }
+    
+    
+    header img {
+      margin-top: 5px;
+      height: 70px;
+      width: 70px;
+    }
+    
+    .btn {
+      margin-top: 1rem;
+      display: inline-block;
+      font-weight: bold;
+      padding: 1rem 3rem;
+      border-radius: 3rem;
+      background: #2f66d4;
+      cursor: pointer;
+      font-size: 1.8rem;
+      color: white;
+    }
+    
+    .btn:hover {
+      background: #1a2ea3;
+    }
+    
+    /* header */
+    
+    .header {
+      left:0rem;
+      right: 0rem;
+      position: fixed;
+      /* z-index: 9; */
+      background: linear-gradient(#5ecafc, #ffffff) ;
+      box-shadow: var(--box-shadow);
+      display: flex;
+      align-items: center;
+      justify-content:space-between;
+      padding: 0.0000001rem 9%;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+    #swiped{
+      width: 40%;
+      height: 40%;
+    }
+    
+    .header .navbar a {
+      font-size: 1.8rem;
+      color: var(--black);
+      margin: 0 1rem;
+    }
+    
+    .header .navbar a:hover {
+      color: red;
+    }
+    
+    .header .btn {
+      margin-top: 0;
+    }
+    
+    #menu-btn {
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--black);
+      margin-left: 1.7rem;
+      display: none;
+    }
+    
+    #menu-btn:hover {
+      color: var(--primary);
+    }
+    
+    /* header end */
+    
+    /* home */
+    
+    .home {
+      min-height: 100vh;
+      display: flex;
+      background-image: linear-gradient(to bottom right, #f0cda1, #7cb6c9);
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .home .content {
+      /* max-width: 60rem; */
+      padding-left: 6rem;
+      padding-top: 5%;
+    }
+    
+    .home .content h3 {
+      font-size: 6rem;
+      color:rgb(18, 16, 16);
+      line-height: 1.2;
+    }
+    
+    .home .content p {
+      line-height: 2;
+      font-size: 1.8rem;
+      color: rgb(18, 16, 16);
+      padding: 1rem 0;
+    }
+    
+    /* home end */
+    
+    /* about us */
+    .about{
+      background: var(--light-bg);
+    }
+    
+    .about .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .about .row .image {
+      flex: 1 1 40rem;
+    }
+    
+    .about .row .image img {
+      width: 95%;
+      height: 100%;
+    }
+    
+    .about .row .content {
+      flex: 1 1 40rem;
+    }
+    
+    .about .row .content h3 {
+      color: var(--black);
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    
+    .about .row .content p {
+      font-size: 1.8rem;
+      color: var(--light-color);
+      padding: 1rem 0;
+      line-height: 2;
+    }
+    
+    /* about end */
+    
+    /* services */
+    
+    .services {
+      background: var(--light-bg);
+    }
+    
+    .services .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: 2rem;
+    }
+    
+    .services .box-container .box {
+      padding: 3rem;
+      background: var(--white);
+      box-shadow: var(--box-shadow);
+      border-radius: 5rem;
+      height: fit-content;
+    }
+    
+    .services .box-container .box:hover {
+      background: var(--hover);
+    }
+    
+    .services .box-container .box img {
+      height: 57%;
+      width: 95%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 1rem;
+    
+    }
+    
+    .services .box-container .box h3 {
+      text-align: center;
+      font-size: 2rem;
+      padding: 1rem 0;
+      color: var(--black);
+      
+    }
+    
+    .services .box-container .box p {
+      text-align: justify;
+      font-size: 1.5rem;
+      color: var(--light-color);
+      line-height: 2;
+    }
+    
+    /* services section ends */
+    
+    /* team section */
+    .team{
+      background: var(--light-bg);
+    }
+    
+    .team .slide {
+      text-align: center;
+    }
+    
+    .team .slide .image {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .team .slide .image img {
+      width: 100%;
+    }
+    
+    .team .slide .image .share {
+      padding: 2rem;
+      position: absolute;
+      bottom: -10rem;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .team .slide:hover .image .share {
+      bottom: 0;
+    }
+    
+    .team .slide .image .share a {
+      font-size: 3rem;
+      margin: 0 1rem;
+      color: var(--white);
+    }
+    
+    .team .slide .image .share a:hover {
+      color: var(--secondary);
+    }
+    
+    .team .slide .content {
+      display: flex;
+      padding-top: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .team .slide .content h3 {
+      font-size: 2rem;
+      color: var(--black);
+    }
+    
+    .team .slide .content span {
+      font-size: 1.5rem;
+      line-height: 2;
+      color: var(--light-color);
+    }
+    
+    /* team section ends */
+    
+    .pricing {
+      background: var(--light-bg);
+    }
+    
+    .pricing .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .pricing .box-container .box {
+      height: 46rem;
+      width: 30rem;
+      margin: 2rem 4rem;
+      border-radius: 1rem;
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      background: var(--white);
+    }
+    
+    .pricing .box-container .active {
+      background: var(--hover);
+    }
+    
+    .pricing .box-container .box .title {
+      margin: 3rem 0;
+      font-size: 2.2rem;
+      color: var(--black);
+      text-transform: uppercase;
+    }
+    
+    .pricing .box-container .box .price {
+      color: var(--primary);
+      margin-bottom: 5rem;
+    }
+    
+    .pricing .box-container .box .price .currency {
+      font-size: 4rem;
+      line-height: 3.5rem;
+      font-weight: 300;
+    }
+    
+    .pricing .box-container .box .price .amount {
+      font-size: 5.8rem;
+      line-height: 4.5rem;
+      font-weight: 700;
+    }
+    
+    .pricing .box-container .box .price .duration {
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 0.2rem;
+    }
+    
+    .pricing .box-container .box ul li {
+      text-align: left;
+      font-size: 1.6rem;
+      padding-left: 3.5rem;
+      margin: 2rem auto;
+      color: var(--light-color);
+      text-transform: uppercase;
+    }
+    
+    .pricing .box-container .box ul li i {
+      padding: 0 1rem;
+      color: var(--secondary);
+    }
+    
+    /* pricing plan ends */
+    
+    /* contact */
+    
+    .contact {
+      background: var(--light-bg);
+    }
+    
+    .contact form {
+      padding: 2rem;
+      background: var(--white);
+      max-width: 50rem;
+      margin: 0 auto;
+      border-radius: 0.5rem;
+    }
+    
+    .contact form span {
+      font-size: 1.7rem;
+      color: var(--primary);
+    }
+    
+    .contact form .inputBox {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .contact form .inputBox input {
+      padding: 1rem;
+      margin: 1rem 0;
+      font-size: 1.7rem;
+      color: var(--black);
+      text-transform: capitalize;
+      background: var(--light-bg);
+      border-radius: 0.5rem;
+      width: 49%;
+    }
+    
+    .contact form .box {
+      margin: 1rem 0;
+      width: 100%;
+      background: var(--light-bg);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      font-size: 1.7rem;
+      color: var(--black);
+      /* text-transform: capitalize; */
+    }
+    
+    /* contact ends */
+    
+    /* footer */
+    
+    .footer {
+      text-align: center;
+    }
+    
+    .footer .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer .box-container .box h3 {
+      font-size: 2.2rem;
+      padding: 1rem 0;
+      color: var(--secondary);
+    }
+    
+    .footer .box-container .box p {
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
+      line-height: 2;
+      color: var(--light-color);
+    }
+    
+    .footer .box-container .box .share {
+      margin-top: 1rem;
+    }
+    
+    .footer .box-container .box .share a {
+      height: 4.5rem;
+      width: 4.5rem;
+      background: var(--primary);
+      color: var(--white);
+      line-height: 4.5rem;
+      border-radius: 10%;
+      font-size: 1.7rem;
+      margin-right: 0.3rem;
+      text-align: center;
+    }
+    
+    .footer .box-container .box .share a:hover {
+      background: var(--secondary);
+    }
+    
+    .footer .box-container .box .link {
+      display: block;
+      font-size: 1.7rem;
+      line-height: 2;
+      color: var(--primary);
+      padding: 0.5rem 0;
+    }
+    
+    .footer .box-container .box .link:hover {
+      color: var(--hover);
+    }
+    
+    .footer .credit {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      font-size: 2rem;
+      text-align: center;
+      /* text-transform: capitalize; */
+      color: var(--primary);
+      border-top: 0.1rem solid var(--secondary);
+    }
+    
+    .footer .credit span {
+      color: var(--secondary);
+    }
+    .home img{
+        height:90%;
+        width:60%;
+      }
+    
+    /* footer ends */
+    
+    /* media queries */
+    
+    @media (max-width: 991px) {
+      html {
+        font-size: 50%;
+      }
+    
+      /* .header .btn {
+        display: none;
+      } */
+    
+      section {
+        padding: 2rem;
+      }
+    
+      
+    }
+    
+    @media (max-width: 1140px) {
+      #menu-btn {
+        display: inline-block;
+      }
+    
+      .home{
+        flex-flow:column;
+        min-height: fit-content;
+      }
+    
+      #menu-btn.fa-times {
+        transform: rotate(180deg);
+      }
+    
+      /* .header{
+            position: absolute;
+    
+      } */
+    
+      .header .navbar {
+        position: absolute;
+    
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-top: var(--border);
+        padding: 1rem 0;
+        text-align: center;
+        flex-flow: column;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      }
+    
+      .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+    
+      .home img{
+        margin-top:10%;
+        height:90%;
+        width:100%;
+      }
+    
+      .home {
+        background-position: left;
+      }
+    
+      .home .content {
+        /* max-width: 50rem; */
+        padding-left: 3rem;
+      }
+    
+      .home .content h3 {
+        font-size: 4rem;
+      }
+      
+    section{
+      overflow-x:hidden;
+    }
+    
+    #swiped{
+      width: 90%;
+      height: 90%;
+    }
+      
+    }
+    
+    /* payment css */
+    .payment-type {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-top: .7rem
+    }
+    
+    .payment-type__title {
+      font-size: 2.5rem;
+      color: #57606b;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      /* border-bottom: 1px solid #e0e5e9; */
+      font-weight: 600;
+      margin-left: 40.5%
+    }
+    
+    .payment-type__link {
+      font-family: "Roboto Condensed",sans-serif;
+      color: #111210;
+      font-weight: 600
+    }
+    
+    .payment-type__link:hover {
+      text-decoration: none;
+      color: #111210
+    }
+    
+    .payment-type__list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0;
+      margin-left: 40%;
+    }
+    
+    .payment-type__item {
+      margin-right: 12px;
+      margin-bottom: 12px
+    }
+    
+    .payment-type__image-section {
+      width: 150px;
+      text-align: center;
+      margin: 0 auto 16px;
+      padding: 10px;
+      border: 1px solid transparent
+    }
+    
+    .payment-type__image-section:hover {
+      border: 1px solid #e0e5e9
+    }
+    
+    .payment-type__img {
+      max-width: 130px;
+      height: 75px;
+      -o-object-fit: contain;
+      object-fit: contain;
+      margin-bottom: 10px
+    }
+    
+    .payment-type__text {
+      margin-bottom: 0;
+      font-size: 1.9rem;
+    }
+    .payment-type .qr .qrK{
+      margin-left: 63%;
+      max-width: 25%;
+      margin-top: -11%;
+    }
+    
+    .payment-type .qr .qrE {
+      margin-left: 12%;
+      max-width: 25%;
+      margin-top: -20%;
+    }
+    
+    .content1 h3{
+      text-align: center;
+    }
+    
+    
+    .about .content5 h3 {
+      color: var(--black);
+      font-size: 3.5rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .btn1{
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 1rem 3rem;
+      border-radius: 0.5rem;
+      background: #2f66d4;
+      cursor: pointer;
+      font-size: 1.7rem;
+      color: white;
+      margin-left: 44.5%; 
+    }
+    
+    .btn1:hover {
+      background: #1f2e88;
+    }
+    
+    
+    .mb-3, .my-3 {
+      margin-bottom: 1rem!important;
+    }
+    .mb-3, .my-3 {
+      margin-bottom: 1rem!important;
+    }
+    
+    .swiper-slide h3
+    {
+      text-align: center;
+      font-size: 2rem;
+      padding: 1rem 0;
+       color: var(--black);
+    }
+        </style>
+            <section class="about" id="about">
+                <br>
+                <h1 class="heading">about us</h1>
+          <br>
+                <div class="row">
+                  <div class="image">
+                      {{ treemap|safe }}        
+                  </div>
+          
+                  <div class="content">
+                    
+                    <h3>"Destined for a Cultured Outcome"</h3>
+                    <br>
+                    <p>
+                      Little Diamond Montessori Pre-School is a school that has been serving
+                      the students and their parents since its founding in 2068 B.S. SInce then, we
+                      have been successful in offering comprehensive services, including teaching, learning, overall development, and communication. 
+                      With a team of educated and cultured individuals, we have been successful in providing a cultured outcome. The treatment of students is also one of the major aspects 
+                      when it comes to delivering cultured outcomes.
+                      Our dedication to student growth
+                      has made us well-known, and we are proud to be a
+                      trusted school for a wide range of people.
+                    </p>
+                    <br>
+                    <div class="button">
+                    <a href="#social" class="btn">Join Us</a>
+                  </div>
+                  </div>
+                </div>
+              </section>
+        <section class="services" id="services">
+            <h1 class="heading">Our Programmes</h1>
+            <br>
+            <br>
+           
+            
+      
+            <div class="box-container">
+              <div class="box">
+                <br>
+        
+                <img src="data:image/png;base64,{{ lineplot }}" alt="Segmentation Plot" height="60%" width="100%">          <br>
+                <h3>Play Group</h3>
+                
+                <p>
+                The playgroup programme, designed for children aged 1.10 to 2.9 years, promotes free play, social interaction, 
+                and cooperation. Applying parallel play and group activities, 
+                children get engaged with their peers while fostering a feeling/sense of sharing and learning. </p>
+              </div>
+              <div class="box">
+                <br>
+                <img src="data:image/png;base64,{{ fig_segmentation }}" alt="Segmentation Plot" height="60%" width="100%">          <br>
+                <h3>Nursery</h3>
+                <p>
+                The nursery programme is tailored for children typically between the ages of 2.10 to 3.9 years old. It provides 
+                a structured environment that epitomizes independence,
+                self-directed learning, and hands-on exploration through a variety of age-appropriate activities.
+                </p>
+              </div>
+      
+              <div class="box">
+                <br>
+                <img src="LKG.jpg" alt="" />
+                <br>
+                <h3> L.K.G.</h3>
+                <p>
+                L.K.G., also known as Lower Kindergarten, is a programme designed for children usually around 3.10 to 4 years old.
+                 It includes language development, basic math concepts,
+                  sensorial exploration, and gross skill development, building the base for academic progress.
+                </p>
+              </div>
+      
+              <div class="box" style="height: auto;">
+                <br>
+                <img src="ukg.png" alt="" />
+                <br>
+                <h3>U.K.G.</h3>
+                <p>
+                U.K.G., also known as Upper Kindergarten, is a programme aimed at children around 4.10 to 5.9 years old. It includes
+                 Mathematics, Science, Social Studies, Arts, and Physical Education, providing a base for academic & social development
+                  for higher schooling.
+                </p>
+              </div>
+            </div>
+            <br>
+            <br>
+            <br>
+          </section>
+      
+          <!-- programmes end-->
+      
+              <!-- services plan  -->
+              <section class="service" id="service" style="  background: var(--light-bg); padding-top: 0rem">
+                <h1 class="heading">Our Services</h1>
+                <div class="swiper mySwiper" id="swiped">
+                <br><br><br>
+      
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="Montessori.jpg" style="display: block;
+                    width: 100%;"/>
+                    <br>
+                    <h3 justify="center"> Peaceful Environment </h3>
+                  </div>
+                    <div class="swiper-slide">
+                      <img src="wellmanagedclassrooms.png" style="display: block;
+                      width: 100%;" />
+                      <br>
+                      <h3 justify="center"> Well-Managed Classrooms </h3>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="lab.png" style="display: block;
+                      width: 100%;"/>
+                      <br>
+                      <h3> Montessori Library </h3>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="transportation.png" style="display: block;
+                      width: 100%;"/>
+                      <br>
+                      <h3 justify="center"> Transportation </h3>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="games.png" style="display: block;
+                      width: 100%;"/>
+                      <br>
+                      <h3 justify="center"> Sports & Games </h3>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="dance.png" style="display: block;
+                      width: 100%;"/>
+                      <br>
+                      <h3 justify="center"> Music & Dance </h3>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="practicaleducation.png" style="display: block;
+                      width: 100%;"/>
+                      <br>
+                      <h3 justify="center"> Practical Education </h3>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="trips.png" style="display: block;
+                      width: 100%;"/>
+                      <br>
+                      <h3 justify="center"> Trips/Tours </h3>
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="swiper-pagination" style="bottom: -30px"></div>
+                </div>
+              
+                <!-- Swiper JS -->
+                <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+              
+                <!-- Initialize Swiper -->
+                <script>
+                  var swiper = new Swiper(".mySwiper", {
+                    effect: "flip",
+                    grabCursor: true,
+                    pagination: {
+                      el: ".swiper-pagination",
+                    },
+                    
+                  });
+                
+               </script>  
+               <br>
+               <br>
+               <br>
+      
+               </section>      
+       
+               
+          
+              
+          
+              <!-- services plan ends -->
+      
+          <!-- team section -->
+      
+          <section class="team" id="team">
+            <h1 class="heading">Our Team</h1>
+            <br><br><br>
+      
+            <div class="swiper team-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide slide">
+                  <div class="image">
+                  
+                  <img src="sumitra.png" alt="" />
+                    <!-- <div class="share">
+                       <a href="#" class="fab fa-facebook-f"></a>
+                       <a href="https://twitter.com/PradhanSamu" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/sama-pradhan-33a126169/?originalSubdomain=np" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Sumitra Dangal</h3>
+                    <span><b><big>Chairperson</big></b></span>              
+                  </div>
+                </div>
+      
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="principal.png" alt="" />
+                    <!-- <div class="share">
+                     <a href="#" class="fab fa-facebook-f"></a> 
+                     <a href="https://twitter.com/k_vaishnani?lang=en" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://np.linkedin.com/in/dr-kushal-bimb-b467124b" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Amrita Niraula</h3>
+                    <span><b><big>Principal</big></b></span>              
+                  </div>
+                </div>
+      
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="biswash.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Biswash Pudasaini</h3>
+                    <span><b><big>Director</big></b></span>              
+                  </div>
+                </div>
+      
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="sita.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Sita Rijal</h3>
+                    <span><b><big>Director</big></b></span>              
+                  </div>
+                </div>
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="sweta.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Ms. Sweta Karna</h3>
+                    <span><b><big>Teacher</big></b></span>              
+                  </div>
+                </div>
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="radhika.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Radhika Dhimal</h3>
+                    <span><b><big>Teacher</big></b></span>              
+                  </div>
+                </div>
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="usha.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Usha Koirala</h3>
+                    <span><b><big>Teacher</big></b></span>              
+                  </div>
+                </div>
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="bina.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Ms. Bina Bhujel</h3>
+                    <span><b><big>Teacher</big></b></span>              
+                  </div>
+                </div>
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="hari.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mr. Hari Krishna Shrestha</h3>
+                    <span><b><big>Driver</big></b></span>              
+                  </div>
+                </div>
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="kabita.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Kabita Tamang</h3>
+                    <span><b><big>Staff</big></b></span>              
+                  </div>
+                </div>
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="pramila.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Pramila Pokharel</h3>
+                    <span><b><big>Staff</big></b></span>              
+                  </div>
+                </div>
+                <div class="swiper-slide slide">
+                  <div class="image">
+                    <img src="gita.png" alt="" />
+                    <!-- <div class="share">
+                      <a href="#" class="fab fa-facebook-f"></a>
+                      <a href="https://twitter.com/aryal_shreeya" class="fab fa-twitter"></a>
+                      <a href="#" class="fab fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/shreeya-aryal-26b102115/" class="fab fa-linkedin"></a>
+                    </div> -->
+                  </div>
+                  <div class="content" style="display: block;">
+                    <h3 style="font-size: 3rem;">Mrs. Gita Nepal</h3>
+                    <span><b><big>Staff</big></b></span>              
+                  </div>
+                </div>
+            </div>
+      
+          </section>
+      
+      
+      
+      
+          <!-- team section ends -->
+      
+          
+      
+          <!-- footer -->
+      
+      
+          <section class="footer" id="social">
+            <div class="box-container">
+              <div class="box">
+                <h3>Address</h3>
+                <p>Amda Nepal-Jorpati, Gokarneshwor-08, Kathmandu</p>
+                <div class="share">
+                  <a href="https://www.facebook.com/officaillittlediamond" class="fab fa-facebook-f"></a>
+                  <a href="https://www.tiktok.com/@littlediamondmontessori" class="fab fa-tiktok"></a>
+                </div>
+              </div>
+      
+              <div class="box">
+                <h3>E-Mail</h3>
+                <p>amritamainali@gmail.com</p>
+                <p>littlediamondmontessoriprescho@gmail.com
+                </p>
+              </div>
+              
+      
+              <div class="box">
+                <h3>Call Us</h3>
+                <p>01 4915172</p>
+                <p>+977 9843236203</p>
+              </div>
+      
+              <div class="box">
+                <h3>Opening Hours</h3>
+                <p>
+                  Sunday - Friday : 9:00 AM - 3:00 PM<br />
+                </p>
+              </div>
+            </div>
+      
+            <div class="credit">
+              Created By: <span>Little Diamond Montessori Pre-School</span> | All Rights Reserved!
+            </div>
+          </section>
+      
+          <!-- footer ends -->
+      
+          <!-- swiper js link  -->
+          <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+      
+          <!-- custom js file link  -->
+          <script src="scriptmain.js"></script>
+    </body>
+</html>
