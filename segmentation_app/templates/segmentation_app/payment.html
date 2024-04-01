@@ -1,0 +1,415 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>Customer Segmentation using Machine learning Official Website | 2024</title>
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- swiper css link  -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    /> -->
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MDB CSS -->
+<link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit/css/mdb.min.css" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- MDB JS -->
+
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- custom css file link  -->
+  </head>
+  
+  <body>  
+
+  <section class="pricing py-5">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+    <div class="container">
+      <div class="row">
+        <!-- Free Tier -->
+        <div class="col-lg-4">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">Basic User (Free)</h5>
+              <h6 class="card-price text-center">Rs. 0<span class="period">/month</span></h6>
+              <hr>
+              <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Customer Segmentation</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Need for Customer Segmentation</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span> Login/Signup Authentication</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Forgot Password</li>
+                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Projected vs Actual Spending</li>
+                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Marketing Strategies</li>
+                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Unlimited Organizations' Projects</li>
+                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Other Premium Account Priveleges
+                </li>
+              </ul>
+              <div class="d-grid">
+                <a href="#" class="btn btn-primary text-uppercase">Button</a>
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- Plus Tier -->
+<div class="col-lg-4">
+  <div class="card mb-5 mb-lg-0">
+      <div class="card-body">
+          <h5 class="card-title text-muted text-uppercase text-center">Plus</h5>
+          <h6 class="card-price text-center">Rs. 499<span class="period">/month</span></h6>
+          <hr>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Customer Segmentation</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Need for Customer Segmentation</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Organizations' Projects</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Projected vs Actual Spending</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Other Semi-Premium Account Privileges</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Login/Signup Authentication</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Forgot Password</li>
+              <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Marketing Strategies Reports</li>
+          </ul>
+          <form method="post" action="/payment_initiate">
+            {% csrf_token %}
+          <div class="d-grid">
+              <button id="payment-button" class="btn btn-primary text-uppercase">Pay Now</button>
+        </div>
+      </form>
+      </div>
+  </div>
+</div>
+
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">Pro</h5>
+              <h6 class="card-price text-center">Rs. 999<span class="period">/month</span></h6>
+              <hr>
+              <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Customer Segmentation
+                </li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Need for Customer Segmentation</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Organizations' Projects</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Projected vs Actual Spending</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Marketing Strategies</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Other Premium Account Priveleges</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Login/Signup Authentication</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>Marketing Strategies</li>
+              </ul>
+              <div class="d-grid">
+                <a href="#" class="btn btn-primary text-uppercase">Button</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    
+    <div style="font-size:large;">© 2024 Customer Segmentation using ML</div>
+    <pre>                                                                                                          </pre>
+    <div style="font-size: small">Contacts for Segmenting your Customers:<br>
+      niraulaabhinav@gmail.com
+    </div>
+  </div>
+<!--Main Navigation-->
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener("DOMContentLoaded", function() {
+    // Initialize the carousel
+    var myCarousel = new mdb.Carousel(document.getElementById('introCarousel'), {
+      interval: 5000, // Change slide every 5 seconds
+    });
+
+    // Optional: Add event listeners for carousel controls
+    document.getElementById('carouselControlPrev').addEventListener('click', function() {
+      myCarousel.prev();
+    });
+
+    document.getElementById('carouselControlNext').addEventListener('click', function() {
+      myCarousel.next();
+    });
+  });
+</script>
+
+      
+      <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const navbar = document.getElementById('navbar');
+    
+        menuBtn.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
+      
+    <style>
+                 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}  
+  
+  .footer {
+    position: absolute;
+    width: 100vw;
+    font-family: sans-serif;
+    font-size: 24px;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+  }
+  .btn{
+    background: #2f66d4;
+  }
+ section.pricing {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.pricing .card {
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+  margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.pricing .card-price {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.pricing .card-price .period {
+  font-size: 0.8rem;
+}
+
+.pricing ul li {
+  margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+  opacity: 0.7;
+}
+
+.pricing .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+  .pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .pricing .card:hover .btn {
+    opacity: 1;
+  }
+}
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- home -->
+
+    
+    <!-- home end -->
+
+    <!-- about us section-->
+
+
+
+    <!-- about end -->
+
+    <!-- programmes -->      
+      
+     
+    <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <!-- <script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      on: {
+        autoplayTimeLeft(s, time, progress) {
+          progressCircle.style.setProperty("--progress", 1 - progress);
+          progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+        }
+      }
+    });
+  </script> -->
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 15000,
+        disableOnInteraction: false
+      },
+        pagination: {
+          el: ".swiper-pagination",
+          dynamicBullets: true,
+        },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mdb-ui-kit/js/mdb.min.js"></script>
+<style>
+  section.pricing{
+  background-image: url('{% static "images/FRONTPAGE.png" %}');
+    height: 94.5vh !important;
+}
+</style>
+<script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
+<script>
+var config = {
+    // replace the publicKey with yours
+    // "publicKey": "live_public_key_a6c6c20bcd044706bea361ec788d70cc",
+    "publicKey": "test_public_key_4d7622075cca4d2c90f1bf15efb5618c",
+    "productIdentity": "1234567890",
+    "productName": "Semi-Premium",
+    "productUrl": "http://127.0.0.1:8000/payment_initiate",
+    "paymentPreference": [
+        "KHALTI",
+        "EBANKING",
+        "MOBILE_BANKING",
+        "CONNECT_IPS",
+        "SCT",
+    ],
+    "eventHandler": {
+        onSuccess(payload) {
+            // hit merchant API for initiating verification
+            console.log(payload);
+            console.log("Pay vayo hai bhai");
+        },
+        onError(error) {
+            console.log(error);
+        },
+        onClose() {
+            console.log('widget is closing');
+        }
+    }
+};
+
+var checkout = new KhaltiCheckout(config);
+var btn = document.getElementById("payment-button");
+btn.onclick = function () {
+  event.preventDefault(); // Prevent default form submission
+    // minimum transaction amount must be 10, i.e., 1000 in paisa.
+    checkout.show({ amount: 1000 }, {
+        onSuccess: function (payload) {
+            // Send payment data to backend after successful payment
+            sendDataToBackend(payload);
+        },
+        onError: function (error) {
+            console.log(error);
+        },
+        onClose: function () {
+            console.log('Payment widget closed');
+        }
+    });
+}
+
+function sendDataToBackend(payload) {
+    // Send payment payload to backend using fetch or XMLHttpRequest
+    fetch("http://127.0.0.1:8000/payment_initiate", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Payment initiation response:", data);
+        // Handle response from backend as needed
+    })
+    .catch(error => {
+        console.error("Error sending payment payload to backend:", error);
+    });
+}
+
+
+</script>
+
+
+
+
+  </body>
+</html>
+
+

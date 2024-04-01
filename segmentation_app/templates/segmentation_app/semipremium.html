@@ -186,15 +186,44 @@
   <div class="content" style="position: relative; z-index: 1;">
 <br>
 <br>
-    <h3>Customer Segmentation</h3>
+    <h3>Predicted vs Actual Spending</h3>
     <br>
     <p>
-      This Customer Segmentation homepage classifies customers according to their behavior by using multiple metrics,<br> including length of usage, recency in purchases, frequency of transactions, and the amount of money<br> spent by customers. Each metric provides valuable insights into different aspects of customer behavior, allowing for a comprehensive understanding of the customer segments and the customer segments have been named appropriately.<br> The graphs below show the visual representations of each of those portions. To see them, swipe down.    <br>
+      This Predicted vs Actual Spending homepage displays customer statistics according to their spending behavior,<br> based on recency in purchases, frequency of transactions, average money spent and the total amount of money<br> spent by customers. Each metric provides valuable insights into different aspects of spending behavior, allowing for a comprehensive comparison between the actual spending and the predicted spending of the customers.<br> The graphs below show the visual representations of spending behaviour of each customer. To see them, swipe down.    <br>
     <br>
-    <a href="#footer" class="btn"> Customer Segmentation Graphs </a>
+    <a href="#footer" class="btn"> Predicted VS Actual Spending Graphs </a>
   </div>
 </section>
 </div>
+<section class="about" id="about" style="background-color: #000000;">
+  <h2 style="font-size:4.5rem; color: #fff; text-align: center; font-weight:600%; text-transform: capitalize; padding-top: 0%;">The premier platform for segmenting customers</h2>
+
+  <br>
+<br>
+<div class="row" style="margin-left:75px;">
+  <div class="image" style="background-color:#000000">
+      <img src="data:image/png;base64,{{ img_str }}" alt="Bar Plot">
+    </div>
+
+    <div class="content">
+      
+      <h3>Total Customers: {{customers}}</h3>
+      <br>
+      <p>
+According to the dataset, there are {{noofsegments}} segments and the details have been displayed in the treemap. The segments are {{segments}}. 
+      </p>
+      <p>
+        You can click on specific boxes to view respective details.
+      </p>
+      <br>
+      <div class="button">
+      <a href="#social" class="btn">Join Us</a>
+    </div>
+    </div>
+  </div>
+</section>
+<br>
+<br>
 <section class="about" id="about" style="background-color: #000000;">
   <br>
   <h2 style="font-size:4.5rem; color: #fff; text-align: center; font-weight:600%; text-transform: capitalize; padding-top: 0%;">The premier platform for segmenting customers</h2>
@@ -221,13 +250,57 @@ According to the dataset, there are {{noofsegments}} segments and the details ha
     </div>
   </div>
 </section>
+<div>
+  <pre>{{ marketing_strategies }}</pre>
+</div>
 
 <section class="services" id="services" style="background-color: #000000;">
   <br>
   <br>
  
-  
+  <h2 style="font-size:4.5rem; color: #fff; text-align: center; font-weight:600%; text-transform: capitalize; padding-top: 0%;">The Premium Platform For Knowing Spending Behaviour</h2>
 
+
+  <div class="box-container">
+    <div class="box">
+      <br>
+      <img src="data:image/png;base64,{{ featureimportance }}" alt="Bar Plot">
+      <br>
+      <br>
+      <h3>Feature Importance</h3>
+      <br>
+      <br>
+      <p>
+        The chart given above shows which among recency, monetary, average monetary and frequency was responsible for the prediction and what should the business improve to maintain spending behaviour. You can click on this box to watch the zoomed view of the plot.
+      </p>
+    </div>
+        <!-- Popup container -->
+<div id="popupContainer" class="popup">
+  <!-- Image element to display the popup image -->
+  <img id="popupImg" class="popup-img" src="" alt="Popup Image">
+</div>
+
+    <div class="box">
+      <br>
+
+      <img src="data:image/png;base64,{{ threedplot }}" alt="Bar Plot">
+      <br>
+      <br>      
+      <h3>Predicted Vs Actual Spending</h3>
+      <br>
+      <br>
+      <p>
+        The {{customers}} customers' total spending vs predicted spending in the last 180 days has been displayed in the plot. Hence, the Customer IDs are pointing towards the particular customer. You can click on this box to watch the zoomed view of the plot.
+       </p>
+    </div>
+    <!-- Popup container -->
+<div id="popupContainer" class="popup">
+  <!-- Image element to display the popup image -->
+  <img id="popupImg" class="popup-img" src="" alt="Popup Image">
+</div>
+
+
+  </div>
   <div class="box-container">
     <div class="box">
       <br>
@@ -286,12 +359,34 @@ According to the dataset, there are {{noofsegments}} segments and the details ha
 
 
   </div>
-  
-  
   <br>
   <br>
   <br>
 </section>
+<script>
+  // Wait for the DOM to fully load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get references to DOM elements
+    var box = document.querySelector('.box');
+    var popupContainer = document.getElementById('popupContainer');
+    var popupImg = document.getElementById('popupImg');
+    var plotImage = document.getElementById('plotImage');
+
+    // Event listener for box click
+    box.addEventListener('click', function() {
+      // Set the src attribute of the popup image to the same as the plot image
+      popupImg.src = plotImage.src;
+      // Show the popup
+      popupContainer.style.display = 'block';
+    });
+
+    // Event listener for popup click to close the popup
+    popupContainer.addEventListener('click', function() {
+      // Hide the popup when clicked
+      popupContainer.style.display = 'none';
+    });
+  });
+</script>
 
   <div class="footer">
     
@@ -418,7 +513,27 @@ section {
   margin-right:35%;
 }
 
+  /* Style for the popup */
+  .popup {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position to overlay on the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 9999; /* Ensure popup appears on top */
+  }
 
+  /* Style for the image within the popup */
+  .popup-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+  }
 
 .home .content h3 {
   font-size: 6rem;

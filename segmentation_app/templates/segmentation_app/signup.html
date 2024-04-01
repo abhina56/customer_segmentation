@@ -1,0 +1,283 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>Customer Segmentation using Machine learning Official Website | 2024</title>
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- swiper css link  -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    /> -->
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MDB CSS -->
+<link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit/css/mdb.min.css" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- MDB JS -->
+
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- custom css file link  -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+      function validateForm() {
+          var femaleGenderChecked = document.getElementById('femaleGender').checked;
+          var maleGenderChecked = document.getElementById('maleGender').checked;
+          var otherGenderChecked = document.getElementById('otherGender').checked;
+  
+          if (!femaleGenderChecked && !maleGenderChecked && !otherGenderChecked) {
+              alert('Please select a gender.');
+              return false;
+          }
+          return true;
+      }
+  </script>
+
+  </head>
+
+  <body>
+    <!-- <div style="position: relative; height: 95vh;">
+      <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%;">
+        <source src="{% static 'images/Untitled_design.mp4' %}" type="video/mp4">
+        <source src="{% static 'images/Untitled_design.mp4' %}" type="video/webm">
+        Your browser does not support the video tag.
+      </video> -->
+      <body>
+        <section class="h-100 bg-dark">
+            <div class="container py-5 h-100" style="width:100%;">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                  <div class="card card-registration my-4">
+                    <div class="row g-0">
+                      <div class="col-xl-6 d-none d-xl-block">
+                        <img src="{% static 'images/SegmentationMap.png' %}"
+                          alt="Sample photo" class="img-fluid"
+                          style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                      </div>
+                      <div class="col-xl-6">
+                        <div class="card-body p-md-5 text-black">
+                          <h3 class="mb-5 text-uppercase" style="font-weight: bold; text-align: center;">Registration form</h3>
+                          <form id="registrationForm" method="post" onsubmit="return validateForm()" action="{% url 'segmentation_app:signup' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <input type="text" id="form3Example1m" name="first_name" class="form-control form-control-lg" required/>
+                                <label class="form-label" for="form3Example1m">First name</label>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <input type="text" id="form3Example1n" name="last_name" class="form-control form-control-lg" required/>
+                                <label class="form-label" for="form3Example1n">Last name</label>
+                              </div>
+                            </div>
+                          </div>
+          
+                          <div class="row">
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <input type="text" id="form3Example1m1" name="phonenumber" class="form-control form-control-lg" required/>
+                                <label class="form-label" for="form3Example1m1">Contact Number</label>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <input type="text" id="form3Example1n1" name="purpose" class="form-control form-control-lg" required/>
+                                <label class="form-label" for="form3Example1n1">Purpose</label>
+                              </div>
+                            </div>
+                          </div>
+      
+          
+                          <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                            <h6 class="mb-0 me-4">Gender: </h6>
+                        
+                            <div class="form-check form-check-inline mb-0 me-4">
+                                <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female" />
+                                <label class="form-check-label" for="femaleGender">Female</label>
+                            </div>
+                        
+                            <div class="form-check form-check-inline mb-0 me-4">
+                                <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male" />
+                                <label class="form-check-label" for="maleGender">Male</label>
+                            </div>
+                        
+                            <div class="form-check form-check-inline mb-0">
+                                <input class="form-check-input" type="radio" name="gender" id="otherGender" value="Others" />
+                                <label class="form-check-label" for="otherGender">Others</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row" style="display:block;">
+                            <div class="col-md-6 mb-4">
+                                <label for="province">Province: </label>
+                                <select name="province" id="province" class="select" onchange="populateDistricts()" required></select>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="district">District: </label>
+                                <br>
+                                <select name="district" id="district" class="select" style="width: 116%;" required></select>
+                            </div>
+                        </div>
+                        
+                        <br>
+          
+                          <div class="form-outline mb-4">
+                            <input type="date" id="form3Example9" name="dob" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="form3Example9">DOB</label>
+                          </div>
+          
+                          <div class="form-outline mb-4">
+                            <input type="text" id="form3Example99" name="username" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="form3Example99">Email ID</label>
+                          </div>
+          
+                          <div class="form-outline mb-4">
+                            <input type="password" id="form3Example97" name="password" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="form3Example97">Password</label>
+                          </div>
+
+                          <p class="mb-5 pb-lg-2" style="color: #000000;">Already have an account? <a href="{% url 'segmentation_app:login' %}" style="color: #393f81;">Login here</a></p>
+
+          
+                          <div class="d-flex justify-content-end pt-3">
+                            <button type="button" class="btn btn-light btn-lg">Reset all</button>
+                            <button type="submit" class="btn btn-warning btn-lg ms-2" style="background: #2f66d4;">Submit form</button>
+                          </div>
+                          </form>
+          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    <!-- </div> -->
+    <script>
+    {% if messages %}
+    {% for messages in messages %}
+            swal("Error!", "{{ messages }}", "error");
+    {% endfor %}
+{% endif %}
+</script>
+
+  </body>
+  
+  <script>
+let addressData;
+
+// Load JSON Data
+fetch('{% static "files/nepal_location.json" %}')
+    .then(response => response.json())
+    .then(data => {
+        addressData = data;
+        console.log('JSON Data loaded:', addressData); // Add this line to log the loaded JSON data
+        populateProvinces();
+    })
+    .catch(error => console.error('Error loading JSON:', error));
+
+    // Populate Provinces
+function populateProvinces() {
+    const provinceSelect = document.getElementById('province');
+    addressData.provinceList.forEach(province => {
+        provinceSelect.options[provinceSelect.options.length] = new Option(province.name, province.name);
+    });
+}
+
+// Populate Districts
+function populateDistricts() {
+    const districtSelect = document.getElementById('district');
+    districtSelect.innerHTML = '';
+
+    const selectedProvinceName = document.getElementById('province').value;
+    const selectedProvince = addressData.provinceList.find(province => province.name === selectedProvinceName);
+
+    selectedProvince.districtList.forEach(district => {
+        districtSelect.options[districtSelect.options.length] = new Option(district.name, district.name);
+    });
+}
+
+// // Populate Municipalities
+// function populateMunicipalities() {
+//     const municipalitySelect = document.getElementById('municipality');
+//     municipalitySelect.innerHTML = '';
+
+//     const selectedDistrictName = document.getElementById('district').value;
+//     const selectedProvince = addressData.provinceList.find(province => 
+//         province.districtList.some(district => district.name === selectedDistrictName));
+//     const selectedDistrict = selectedProvince.districtList.find(district => district.name === selectedDistrictName);
+
+//     selectedDistrict.municipalityList.forEach(municipality => {
+//         municipalitySelect.options[municipalitySelect.options.length] = new Option(municipality.name, municipality.name);
+//     });
+// }
+</script>
+
+  <style>
+           @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}  
+.h-100{
+  background-image: url('{% static "images/FRONTPAGE.png" %}');
+    height: 94.5vh !important;
+}
+  
+  .footer {
+    position: absolute;
+    width: 100vw;
+    font-family: sans-serif;
+    font-size: 24px;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<div class="footer">
+    
+  <div style="font-size:large;">© 2024 Customer Segmentation using ML</div>
+  <pre>                                                                                                        </pre>
+  <div style="font-size: small">Contacts for Segmenting your business customers:<br>
+    9861607604<br>
+    niraulaabhinav@gmail.com
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mdb-ui-kit/js/mdb.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+
