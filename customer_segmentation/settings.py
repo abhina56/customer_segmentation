@@ -31,6 +31,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Gmail SMTP server hostname
+EMAIL_PORT = 587  # Gmail SMTP port number
+EMAIL_HOST_USER = 'niraulaabhinav@gmail.com'  # Your Gmail email address
+EMAIL_HOST_PASSWORD = 'agpu flyf gtyk pwxh'  # Your Gmail password or App Password
+EMAIL_USE_TLS = True  # Enable TLS encryption for secure communication with the SMTP server
 
 # Application definition
 
@@ -41,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'segmentation_app',  # Add your app here
 ]
 
 MIDDLEWARE = [
@@ -51,6 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
 ]
 
 ROOT_URLCONF = "customer_segmentation.urls"
@@ -104,6 +112,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'customer',       # Database name (Connection Name)
+        'USER': 'root',             # MySQL username
+        'PASSWORD': ',AbHiNaV@123',  # MySQL password
+        'HOST': 'localhost',        # Hostname
+        'PORT': '3306',             # Port number
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -130,3 +149,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Add or update the CSP directive in your settings
+CSP_DEFAULT_SRC = ("'none'",)
+CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'", "https://khalti.com")
