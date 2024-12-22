@@ -833,9 +833,9 @@ def connect_to_mysql():
     conn = MySQLdb.connect(
         host='localhost',
         port=3306,  # Default MySQL port
-        user='root',  # Your MySQL username
-        passwd=',AbHiNaV@123',  # Your MySQL password
-        db='customer',  # Your database name
+        user='',  # Your MySQL username
+        passwd='',  # Your MySQL password
+        db='',  # Your database name
         charset='utf8'
     )
     return conn
